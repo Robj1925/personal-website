@@ -3,16 +3,46 @@
   <!-- Main Home Page -->
   <url>
     <loc>https://automatewithrobby.fyi/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Blog Index -->
   <url>
     <loc>https://automatewithrobby.fyi/blog/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://automatewithrobby.fyi/blog/google-flow-tutorial-edit-any-video-with-gemini-omni.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://automatewithrobby.fyi/blog/gpt-5-6-luna-just-got-80-percent-cheaper.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://automatewithrobby.fyi/blog/fish-audio-s2-1-pro-free-tts-api.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://automatewithrobby.fyi/blog/grok-voice-2-0-hears-better-than-transcription-models.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://automatewithrobby.fyi/blog/lyria-3-5-google-flow-music-ai-vocals.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://automatewithrobby.fyi/blog/kimi-k3-is-open-source-you-still-cant-run-it.html</loc>

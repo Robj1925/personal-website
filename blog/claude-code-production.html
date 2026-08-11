@@ -156,7 +156,7 @@
 <hr>
 <p><strong>The Three-Phase Framework</strong></p>
 <p>Everything in this guide flows through three sequential phases, each one building on the last:</p>
-<table>
+<div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Phase</th>
@@ -179,7 +179,7 @@
 <td>Execution</td>
 <td>Make changes incrementally, verify manually, and protect your context window.</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p><strong>Phase 1</strong> is about giving Claude the map and the rules. You use targeted tools to build an architectural diagram of your system, generate a <code>CLAUDE.md</code> file that acts as Claude&#39;s persistent project memory, and define explicit hard rules around the parts of the codebase that must not be touched. No code is changed here — this phase is entirely about understanding.</p>
 <p><strong>Phase 2</strong> is about building the plan before any work begins. You lock Claude into read-only Plan Mode and run a structured interview to surface every problem, constraint, and risk in the codebase. The output is an <code>implementation-plan.md</code>— a prioritized TODO list that becomes the single source of truth for everything that follows and is registered inside <code>CLAUDE.md</code> so Claude carries it across every future session.</p>
 <p><strong>Phase 3</strong> is where everything comes together. Armed with the architectural knowledge from Phase 1 and the precise, agreed-upon plan from Phase 2, Claude now knows the codebase deeply and knows exactly what needs to change and where. Execution becomes a matter of working through the <code>implementation-plan.md</code> one atomic task at a time — making a change, manually verifying it works as intended, approving it, and only then moving to the next item. Nothing gets accepted blindly, nothing gets skipped, and no session ends without a handoff document to preserve everything that was accomplished.</p>
@@ -330,7 +330,7 @@ Accept or reject — then move to the next task
 <li>Add a circuit breaker to this one specific external API call</li>
 </ul>
 <p>Each of these is atomic, testable, and reversible. Compare how differently scoped prompts play out in practice:</p>
-<table>
+<div class="table-wrap"><table>
 <thead>
 <tr>
 <th>❌ Vague</th>
@@ -349,7 +349,7 @@ Accept or reject — then move to the next task
 <td>&quot;Make this more modular&quot;</td>
 <td>&quot;Move the database connection logic from <code>order-service/server.js</code> into a new file called <code>order-service/db-client.js</code> and update the import in <code>server.js</code> only.&quot;</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p><strong>Common Pitfall:</strong> The most dangerous thing you can do in this phase is give Claude an open-ended instruction like <em>&quot;Refactor this legacy module to be clean.&quot;</em> Vague requests produce what engineers call <strong>&quot;vibe-coded slop&quot;</strong> — code that looks reasonable on the surface but quietly hallucinates nonexistent APIs, invents function signatures, and breaks production contracts in ways that don&#39;t surface until runtime. The fix is always specificity.</p>
 <blockquote>
 <p>💡 <strong>Red flag to watch for:</strong> If Claude&#39;s proposed change touches more files than the task logically requires, stop and reject it. Re-prompt with tighter constraints. A change that feels too big almost always is.</p>
@@ -359,7 +359,7 @@ Accept or reject — then move to the next task
 <p><em>&quot;The name of the game is that you only have approximately 170k of context window to work with. So it&#39;s essential to use as little of it as possible. The more you use the context window, the worse the outcomes you&#39;ll get.&quot;</em> — Geoffrey Huntly</p>
 <p>Long refactoring sessions degrade silently. As your context window fills up, Claude&#39;s reasoning quality drops — it starts losing track of earlier architectural decisions and producing outputs that contradict constraints you established at the start of the session. You need to stay ahead of this.</p>
 <p>Monitor your token usage actively using <code>/context</code>. Do not wait for auto-compaction to kick in — by the time it does, nuanced decisions have already been lost. Follow this pattern instead:</p>
-<table>
+<div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Situation</th>
@@ -378,7 +378,7 @@ Accept or reject — then move to the next task
 <td>Starting a new session the next day</td>
 <td>Load your handoff document before anything else (see 3.4)</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>The goal is to keep Claude operating in the sharp, high-reasoning part of its context window as much as possible, not the degraded tail end of it.</p>
 <hr>
 <p><strong>3.4 — Write a Handoff Document at the End of Every Session</strong></p>
