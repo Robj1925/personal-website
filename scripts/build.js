@@ -444,7 +444,11 @@ function build() {
     const parsed  = matter(raw);
     const fm      = parsed.data;
     const body    = parsed.content;
-    const html    = marked(body);
+    // Wrap tables so wide ones scroll inside their own container instead of
+    // forcing the whole page to scroll horizontally on mobile.
+    const html    = marked(body)
+      .replace(/<table>/g, '<div class="table-wrap"><table>')
+      .replace(/<\/table>/g, '</table></div>');
     const readTime = readingTime(body);
 
     const post = {
